@@ -1,0 +1,21 @@
+<?php
+# Copyright (C) 2008	Victor Boctor
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+$s_plugin_mantweet_index = 'ManTweet';
+$s_plugin_mantweet_menu_item = 'ManTweet';
+$s_plugin_mantweet_title = 'ManTweet';
+$s_plugin_mantweet_title_full = 'ManTweet - Team Based Micro Blogging';
+$s_plugin_mantweet_description = 'ManTweet is a Twitter clone plugin for private communication within a team.';
+$s_plugin_mantweet_what_are_you_up_to = 'What are you up to?';
+$s_plugin_mantweet_post_your_status = 'Post your status';
+$s_plugin_mantweet_post_status = 'Post';
