@@ -21,7 +21,15 @@ class MantweetUpdate
 	var $date_updated = null;
 }
 
+function mantweet_can_post() {
+	return access_has_global_level( plugin_config_get( 'post_threshold' ) );
+}
+
 function mantweet_add( $p_mantweet_update ) {
+	if ( !mantweet_can_post() ) {
+		access_denied();
+	}
+
 	$t_updates_table = plugin_table( 'updates' );
 
 	$t_query = "INSERT INTO $t_updates_table ( author_id, status, date_submitted, date_updated ) VALUES (" . db_param( 0 ) . ", " . db_param( 1 ) . ", '" . db_now() . "', '" . db_now() . "')";

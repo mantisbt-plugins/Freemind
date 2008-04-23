@@ -19,3 +19,5 @@ $s_plugin_mantweet_description = 'ManTweet is a Twitter clone plugin for private
 $s_plugin_mantweet_what_are_you_up_to = 'What are you up to?';
 $s_plugin_mantweet_post_your_status = 'Post your status';
 $s_plugin_mantweet_post_status = 'Post';
+$s_plugin_mantweet_newer_posts = 'Newer Posts';
+$s_plugin_mantweet_older_posts = 'Older Posts';

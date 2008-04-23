@@ -27,6 +27,7 @@ $t_total_pages_count = (integer)(( $t_total_updates_count + ( $t_updates_per_pag
 $t_updates = mantweet_get_page( $f_page_id, $t_updates_per_page );
 ?>
 <br />
+<?php if ( mantweet_can_post() ) { ?>
 <form name="tweet_form" action="<?php echo plugin_page( 'mantweet_add' ) ?>" method="post">
 
 <table class="width50" align="center" cellspacing="1">
@@ -50,6 +51,7 @@ $t_updates = mantweet_get_page( $f_page_id, $t_updates_per_page );
 </table>
 </form> 
 <br />
+<?php } ?>
 
 <?php
 $t_avatar_size = plugin_config_get( 'avatar_size' );
@@ -57,15 +59,15 @@ $t_avatar_size = plugin_config_get( 'avatar_size' );
 echo '<center>';
 
 if ( $f_page_id > 1 ) {
-	echo '[ <a href="', plugin_page( 'index' ), '&amp;page_id=', (int)($f_page_id) - 1, '">', lang_get( 'prev' ), '</a> ]&nbsp;';
+	echo '[ <a href="', plugin_page( 'index' ), '&amp;page_id=', (int)($f_page_id) - 1, '">', lang_get( 'plugin_mantweet_newer_posts' ), '</a> ]&nbsp;';
 } else {
-	echo '[ ', lang_get( 'prev' ), ' ]&nbsp;';
+	echo '[ ', lang_get( 'plugin_mantweet_newer_posts' ), ' ]&nbsp;';
 }
 
 if ( $f_page_id < $t_total_pages_count ) {
-	echo '[ <a href="', plugin_page( 'index' ), '&amp;page_id=', (int)($f_page_id) + 1, '">', lang_get( 'next' ), '</a> ]';
+	echo '[ <a href="', plugin_page( 'index' ), '&amp;page_id=', (int)($f_page_id) + 1, '">', lang_get( 'plugin_mantweet_older_posts' ), '</a> ]';
 } else {
-	echo '[ ', lang_get( 'next' ), ' ]';
+	echo '[ ', lang_get( 'plugin_mantweet_older_posts' ), ' ]';
 }
 
 echo '<br /><br /><table border="0" width="50%">';

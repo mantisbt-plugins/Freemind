@@ -13,8 +13,6 @@
 
 require_once( config_get( 'plugin_path' ) . 'ManTweet' . DIRECTORY_SEPARATOR . 'mantweet_api.php' ); 
 
-access_ensure_global_level( plugin_config_get( 'post_threshold' ) ); 
-
 $f_status = gpc_get_string( 'status' );
 
 $t_status_update = new MantweetUpdate();
