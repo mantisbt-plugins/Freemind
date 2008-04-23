@@ -17,7 +17,7 @@ access_ensure_global_level( plugin_config_get( 'view_threshold' ) );
 
 $f_page_id = gpc_get_int( 'page_id', 1 );
 
-html_page_top1( lang_get( 'plugin_mantweet_title' ) );
+html_page_top1( lang_get( 'plugin_ManTweet_title' ) );
 html_page_top2();
 
 $t_updates_per_page = 10;
@@ -34,7 +34,7 @@ $t_updates = mantweet_get_page( $f_page_id, $t_updates_per_page );
 
 <tr>
 	<td class="form-title">
-		<?php echo lang_get( 'plugin_mantweet_post_your_status' ) ?>
+		<?php echo lang_get( 'plugin_ManTweet_post_your_status' ) ?>
 	</td>
 </tr>
 
@@ -44,7 +44,7 @@ $t_updates = mantweet_get_page( $f_page_id, $t_updates_per_page );
 
 <tr>
 	<td class="center">
-		<input type="submit" value="<?php echo lang_get( 'plugin_mantweet_post_status' ); ?>" />
+		<input type="submit" value="<?php echo lang_get( 'plugin_ManTweet_post_status' ); ?>" />
 	</td>
 </tr>
 
@@ -59,15 +59,15 @@ $t_avatar_size = plugin_config_get( 'avatar_size' );
 echo '<center>';
 
 if ( $f_page_id > 1 ) {
-	echo '[ <a href="', plugin_page( 'index' ), '&amp;page_id=', (int)($f_page_id) - 1, '">', lang_get( 'plugin_mantweet_newer_posts' ), '</a> ]&nbsp;';
+	echo '[ <a href="', plugin_page( 'index' ), '&amp;page_id=', (int)($f_page_id) - 1, '">', lang_get( 'plugin_ManTweet_newer_posts' ), '</a> ]&nbsp;';
 } else {
-	echo '[ ', lang_get( 'plugin_mantweet_newer_posts' ), ' ]&nbsp;';
+	echo '[ ', lang_get( 'plugin_ManTweet_newer_posts' ), ' ]&nbsp;';
 }
 
 if ( $f_page_id < $t_total_pages_count ) {
-	echo '[ <a href="', plugin_page( 'index' ), '&amp;page_id=', (int)($f_page_id) + 1, '">', lang_get( 'plugin_mantweet_older_posts' ), '</a> ]';
+	echo '[ <a href="', plugin_page( 'index' ), '&amp;page_id=', (int)($f_page_id) + 1, '">', lang_get( 'plugin_ManTweet_older_posts' ), '</a> ]';
 } else {
-	echo '[ ', lang_get( 'plugin_mantweet_older_posts' ), ' ]';
+	echo '[ ', lang_get( 'plugin_ManTweet_older_posts' ), ' ]';
 }
 
 echo '<br /><br /><table border="0" width="50%">';
