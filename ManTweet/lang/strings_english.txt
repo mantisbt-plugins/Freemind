@@ -14,6 +14,7 @@
 $s_plugin_ManTweet_index = 'ManTweet';
 $s_plugin_ManTweet_menu_item = 'ManTweet';
 $s_plugin_ManTweet_title = 'ManTweet';
+$s_plugin_ManTweet_config_title = 'ManTweet Configuration';
 $s_plugin_ManTweet_title_full = 'ManTweet - Team Based Micro Blogging';
 $s_plugin_ManTweet_description = 'ManTweet is a Twitter clone plugin for private communication within a team.';
 $s_plugin_ManTweet_what_are_you_up_to = 'What are you up to?';
@@ -22,3 +23,8 @@ $s_plugin_ManTweet_post_status = 'Post';
 $s_plugin_ManTweet_newer_posts = 'Newer Posts';
 $s_plugin_ManTweet_older_posts = 'Older Posts';
 $s_plugin_ManTweet_status_update = 'Status Update';
+$s_plugin_ManTweet_view_threshold = 'View Threshold';
+$s_plugin_ManTweet_post_threshold = 'Post Threshold';
+$s_plugin_ManTweet_avatar_size = 'Avatar Size (pixels)';
+$s_plugin_ManTweet_post_to_twitter_threshold = 'Publish to Twitter Threshold';
+$s_plugin_ManTweet_access_level_nobody = 'nobody';

@@ -17,6 +17,7 @@
 # You should have received a copy of the GNU General Public License
 # along with Mantis.  If not, see <http://www.gnu.org/licenses/>.
 
+require_once( config_get( 'absolute_path' ) . 'core.php' );
 require_once( config_get( 'class_path' ) . 'MantisPlugin.class.php' );
 
 class ManTweetPlugin extends MantisPlugin {
@@ -76,6 +77,10 @@ class ManTweetPlugin extends MantisPlugin {
 
 	function process_main_menu() {
 		# return plugin_page( 'index.php' );
-		return '<a href="' . plugin_page( 'index.php' ) . '">' . lang_get( 'plugin_ManTweet_menu_item' ) . '</a>';
+		if ( access_has_global_level( plugin_config_get( 'view_threshold' ) ) ) {
+			return array( '<a href="' . plugin_page( 'index.php' ) . '">' . lang_get( 'plugin_ManTweet_menu_item' ) . '</a>' );
+		}
+
+		return array();
 	}
 }
