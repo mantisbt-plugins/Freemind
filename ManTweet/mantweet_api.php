@@ -44,8 +44,10 @@ function mantweet_add( $p_mantweet_update ) {
 
 	db_query_bound( $t_query, array( $p_mantweet_update->author_id, $p_mantweet_update->status ) );
 
-	$t_twitter_update = user_get_name( $p_mantweet_update->author_id ) . ': ' . $p_mantweet_update->status;
-	twitter_update( $t_twitter_update );
+	if ( access_has_global_level( plugin_config_get( 'post_to_twitter_threshold' ) ) ) {
+		$t_twitter_update = user_get_name( $p_mantweet_update->author_id ) . ': ' . $p_mantweet_update->status;
+		twitter_update( $t_twitter_update );
+	}
 
 	return db_insert_id( $t_updates_table );
 }

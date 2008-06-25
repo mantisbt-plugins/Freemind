@@ -46,6 +46,7 @@ class ManTweetPlugin extends MantisPlugin {
 			'view_threshold'	=>	DEVELOPER,
 			'post_threshold'	=>	DEVELOPER,
 			'avatar_size'		=>	48,
+			'post_to_twitter_threshold'	=> NOBODY,
 		);
 	}
 
