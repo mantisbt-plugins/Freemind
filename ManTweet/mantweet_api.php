@@ -30,6 +30,9 @@ function mantweet_add( $p_mantweet_update ) {
 		access_denied();
 	}
 
+	# Trip the string because we don't want spaces around it.
+	$p_mantweet_update->status = trim( $p_mantweet_update->status );
+
 	if ( is_blank( $p_mantweet_update->status ) ) {
 		error_parameters( lang_get( 'plugin_ManTweet_status_update' ) );
 		trigger_error( ERROR_EMPTY_FIELD, ERROR );
