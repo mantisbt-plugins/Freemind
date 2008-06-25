@@ -21,3 +21,4 @@ $s_plugin_ManTweet_post_your_status = 'Post your status';
 $s_plugin_ManTweet_post_status = 'Post';
 $s_plugin_ManTweet_newer_posts = 'Newer Posts';
 $s_plugin_ManTweet_older_posts = 'Older Posts';
+$s_plugin_ManTweet_status_update = 'Status Update';

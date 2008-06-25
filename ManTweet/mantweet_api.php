@@ -30,6 +30,11 @@ function mantweet_add( $p_mantweet_update ) {
 		access_denied();
 	}
 
+	if ( is_blank( $p_mantweet_update->status ) ) {
+		error_parameters( lang_get( 'plugin_ManTweet_status_update' ) );
+		trigger_error( ERROR_EMPTY_FIELD, ERROR );
+	}
+
 	$t_updates_table = plugin_table( 'updates' );
 
 	$t_query = "INSERT INTO $t_updates_table ( author_id, status, date_submitted, date_updated ) VALUES (" . db_param( 0 ) . ", " . db_param( 1 ) . ", '" . db_now() . "', '" . db_now() . "')";
