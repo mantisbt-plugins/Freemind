@@ -89,6 +89,7 @@ echo '</center>';
 html_page_bottom1( __FILE__ );
 ?>
 
+<?php if ( mantweet_can_post() ) { ?>
 <!-- Autofocus JS -->
 <?php if ( ON == config_get( 'use_javascript' ) ) { ?>
 <script type="text/javascript" language="JavaScript">
@@ -96,4 +97,4 @@ html_page_bottom1( __FILE__ );
 	window.document.tweet_form.status.focus();
 // -->
 </script>
-<?php } ?>
+<?php } } ?>
