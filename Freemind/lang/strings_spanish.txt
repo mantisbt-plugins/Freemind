@@ -1,0 +1,24 @@
+<?php
+# Mantis - a php based bugtracking system
+
+# Copyright (C) 2002 - 2008  Mantis Team   - mantisbt-dev@lists.sourceforge.net
+
+# Mantis is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# Mantis is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with Mantis.  If not, see <http://www.gnu.org/licenses/>.
+
+$s_plugin_Freemind_title = 'Freemind';
+$s_plugin_Freemind_description = 'A mind mapping plugin for Mantis.';
+
+$s_plugin_Freemind_mindmap = 'Mapa Mental';
+$s_plugin_Freemind_mindmap_export = 'Exportar a Freemind';
+$s_plugin_Freemind_flash_error = 'Flash plugin or Javascript are turned off.  Activate both and reload to view the mindmap.  This problem may also be caused if "freemind_browser" plugin sub-folder isn\'t copied to Mantis root.';
