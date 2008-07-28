@@ -8,6 +8,8 @@ Credits:
 
 - Freemind Flash Browser - Geoff Stearns (geoff@deconcept.com, http://www.deconcept.com/)
 
-- Freemind - http://www.sourceforge.net/projects/freemind
+- Freemind - http://sourceforge.net/projects/freemind and http://freemind.sourceforge.net/
 
-- TODO: Include the contributor who provided the first version of this code as a patch to Mantis (which since then has been refined and changed to a plugin).
+- tandler for submitting the original patch (http://www.mantisbt.org/bugs/view.php?id=7214).
+
+- Victor Boctor for developing this plugin.
