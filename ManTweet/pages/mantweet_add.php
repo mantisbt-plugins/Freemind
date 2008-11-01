@@ -19,8 +19,6 @@ $t_status_update = new MantweetUpdate();
 $t_status_update->author_id = auth_get_current_user_id();
 $t_status_update->project_id = helper_get_current_project();
 $t_status_update->status = $f_status;
-#$t_status_update->date_submitted = date();
-#$t_status_update->date_updated = date();
 
 mantweet_add( $t_status_update );
 
