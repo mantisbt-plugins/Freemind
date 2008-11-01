@@ -20,6 +20,10 @@
 require_once( config_get( 'absolute_path' ) . 'core.php' );
 require_once( config_get( 'class_path' ) . 'MantisPlugin.class.php' );
 
+/**
+ * A plugin that provides a Twitter like functionality within the bug tracker.
+ * The administration has control on who should be able to view the tweets.
+ */
 class ManTweetPlugin extends MantisPlugin {
 	/**
 	 *  A method that populates the plugin information and minimum requirements.
@@ -40,7 +44,7 @@ class ManTweetPlugin extends MantisPlugin {
 	}
 
 	/**
-	 * Default plugin configuration.
+	 * Gets the plugin default configuration.
 	 */
 	function config() {
 		return array(
@@ -51,6 +55,9 @@ class ManTweetPlugin extends MantisPlugin {
 		);
 	}
 
+	/**
+	 * Gets the database schema of the plugin.
+	 */
 	function schema() {
 		return array(
 			array( 'CreateTableSQL',
@@ -68,6 +75,8 @@ class ManTweetPlugin extends MantisPlugin {
 
 	/**
 	 * Event hook declaration.
+	 * 
+	 * @returns An associated array that maps event names to handler names.
 	 */
 	function hooks() {
 		return array(
@@ -75,6 +84,11 @@ class ManTweetPlugin extends MantisPlugin {
 		);
 	}
 
+	/**
+	 * If current logged in user can view ManTweet, then add a menu option to the main menu.
+	 * 
+	 * @returns An array containing the hyper link.
+	 */
 	function process_main_menu() {
 		# return plugin_page( 'index.php' );
 		if ( access_has_global_level( plugin_config_get( 'view_threshold' ) ) ) {

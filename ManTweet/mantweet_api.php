@@ -11,20 +11,60 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 
+/**
+ * A class that contains all the information relating to a tweet.
+ */
 class MantweetUpdate
 {
+	/**
+	 * The tweet id in the database.
+	 */
 	var $id = 0;
+	
+	/**
+	 * The tweet content.
+	 */
 	var $status = '';
+	
+	/**
+	 * The tweet author id (i.e. user id)
+	 */
 	var $author_id = 0;
-	var $project_id = 0;
+	
+	/**
+	 * The tweet project id, currently tweets are not associated with projects,
+	 * hence, the id is ALL_PROJECTS.
+	 */
+	var $project_id = ALL_PROJECTS;
+	
+	/**
+	 * The submission timestamp for the tweet.  This is setup by the mantweet_add()
+	 * function.
+	 */
 	var $date_submitted = null;
+	
+	/**
+	 * The last update timestamp for the tweet.  This is setup nby the mantweet_add()
+	 * function and is currently never changed since ManTweet doesn't support editing.
+	 */
 	var $date_updated = null;
 }
 
+/**
+ * Checks if the current logged in user has the necessary access level to submit
+ * a tweet.
+ * 
+ * @returns bool true for yes, otherwise false.
+ */
 function mantweet_can_post() {
 	return access_has_global_level( plugin_config_get( 'post_threshold' ) );
 }
 
+/**
+ * Adds a tweet.  This functional sets the submitted / last updated timestamps to now.
+ * 
+ * @param MantweetUpdate $p_mantweet_update  The information about the tweet to be added. 
+ */
 function mantweet_add( $p_mantweet_update ) {
 	if ( !mantweet_can_post() ) {
 		access_denied();
@@ -52,6 +92,15 @@ function mantweet_add( $p_mantweet_update ) {
 	return db_insert_id( $t_updates_table );
 }
 
+/**
+ * Gets the tweet visible on a page given the page number (1 based)
+ * and the number of tweets per page.
+ * 
+ * @param int $p_page_id   A 1-based page number.
+ * @param int $p_per_page  The number of tweets to display per page.
+ * 
+ * @returns Array of MantweetUpdate class instances. 
+ */
 function mantweet_get_page( $p_page_id, $p_per_page ) {
 	$t_updates_table = plugin_table( 'updates' );
 	$t_offset = ( $p_page_id - 1 ) * $p_per_page;
@@ -60,6 +109,7 @@ function mantweet_get_page( $p_page_id, $p_per_page ) {
 	$t_result = db_query_bound( $t_query, null, $p_per_page, $t_offset );
 
 	$t_updates = array();
+
 	while ( $t_row = db_fetch_array( $t_result ) ) {
 		$t_current_update = new MantweetUpdate();
 		$t_current_update->id = (integer)$t_row['id'];
@@ -75,6 +125,11 @@ function mantweet_get_page( $p_page_id, $p_per_page ) {
 	return $t_updates;
 }
 
+/**
+ * Gets the total number of tweets in the database.
+ * 
+ * @returns the number of tweets.
+ */
 function mantweet_get_updates_count() {
 	$t_updates_table = plugin_table( 'updates' );
 
