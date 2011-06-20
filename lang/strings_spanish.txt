@@ -19,6 +19,5 @@
 $s_plugin_Freemind_title = 'Freemind';
 $s_plugin_Freemind_description = 'A mind mapping plugin for Mantis.';
 
-$s_plugin_Freemind_mindmap = 'Mapa Mental';
-$s_plugin_Freemind_mindmap_export = 'Exportar a Freemind';
-$s_plugin_Freemind_flash_error = 'Flash plugin or Javascript are turned off.  Activate both and reload to view the mindmap.  This problem may also be caused if "freemind_browser" plugin sub-folder isn\'t copied to Mantis root.';
+$s_plugin_Freemind_export = 'Exportar a Freemind';
+$s_plugin_Freemind_browse = 'Mapa Mental';

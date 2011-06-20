@@ -48,10 +48,4 @@ $t_filename = "exported_issues.mm";
 # Make sure that IE can download the attachments under https.
 header( 'Pragma: public' );
 
-header( 'Content-Type: text/xml; name=' . urlencode( $t_filename ) );
-header( 'Content-Transfer-Encoding: BASE64;' );
-
-# Added Quotes (") around file name.
-header( 'Content-Disposition: attachment; filename="' . urlencode( $t_filename ) . '"' );
-
 freemind_export_map();

@@ -1,6 +1,7 @@
 <?php
 /** MantisBT - a php based bugtracking system
  *
+ * Copyright (C) 2000 - 2002  Kenzaburo Ito - kenito@300baud.org
  * Copyright (C) 2002 - 2010  MantisBT Team - mantisbt-dev@lists.sourceforge.net
  *
  * MantisBT is free software: you can redistribute it and/or modify
@@ -16,8 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with MantisBT.  If not, see <http://www.gnu.org/licenses/>.
  */
-
-/** English (English)
+/** German (Deutsch)
  *
  * See the qqq 'language' for message documentation incl. usage of parameters
  * To improve a translation please visit http://translatewiki.net
@@ -29,7 +29,7 @@
  */
 
 $s_plugin_Freemind_title = 'Freemind';
-$s_plugin_Freemind_description = 'Adds export of issues as mind map (Freemind), which can also be displayed online.';
+$s_plugin_Freemind_description = 'Ergänzt MantisBT um den Export von Issues als Mindmap (Freemind), die auch online direkt betrachtet werden kann.';
 
-$s_plugin_Freemind_export = 'Freemind Export';
+$s_plugin_Freemind_export = 'Freemind-Export';
 $s_plugin_Freemind_browse = 'Mindmap';
